@@ -1,16 +1,18 @@
-//IMPORT REACT
+//IMPORTS
 import ReactDOM from 'react-dom';
-import Navibar from './components/navibar/navibar'
+import Navibar from './components/Navibar';
+import Container from './components/Container';
+import Mobilebar from './components/Mobilebar';
 
 //UI
 function App() {
     return (
         <div>
             <Navibar />
-            <Conteiner />
-            <MobileBar />
+            <Container />
+            <Mobilebar />
         </div>
     );
 }
 
-ReactDOM.render(App(), document.querySelector(".root"));
+ReactDOM.render(<App />, document.querySelector(".root"));
