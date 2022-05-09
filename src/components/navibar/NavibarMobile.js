@@ -8,7 +8,7 @@ export default function NavibarDesktop() {
             </div>
             <div className="instagram-logo-mobile">
                 <a href="https://www.instagram.com">
-                    <img src="/projeto2-instagram/imagens/logo.png" title="Instagrão" alt="Logo" />
+                    <img src="./assets/img/logo.png" title="Instagrão" alt="Logo" />
                 </a>
             </div>
             <div className="botao-cima-mobile">

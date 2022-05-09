@@ -10,7 +10,7 @@ function App() {
         <div>
             <Navibar />
             <Container />
-            <Mobilebar />
+            {/* <Mobilebar /> */}
         </div>
     );
 }

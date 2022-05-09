@@ -1,6 +1,9 @@
+//EXPORT
 export default function User(props) {
+    //Esquema da props
     const {name, username, img, link, title} = props;
 
+    //UI
     return (
         <div class="topo-menu-lateral">
             <div class="imagem-topo-menu-lateral">

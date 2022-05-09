@@ -10,9 +10,8 @@ export default function Aside() {
     //UI
     return (
         <div className="menu-lateral">
-            <img src='./assets/' />
             <User name={user.name} username={user.username} img={user.img} link={user.link} title={user.title} /> 
-            <Suggestions /> //falta props
+            <Suggestions />
             <div class="baixo-menu-lateral">
                 <div class="detalhes-menu-lateral">
                     <a href="https://www.instagram.com/">Sobre</a> •

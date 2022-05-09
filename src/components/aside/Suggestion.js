@@ -1,6 +1,9 @@
+//EXPORT
 export default function Suggestion(props) {
+    //Esquema da props
     const {name, username, img, link, reason} = props;
 
+    //UI
     return (
         <div className="sugestao-item-menu-lateral">
             <div class="usuario-sugestao-menu-lateral">

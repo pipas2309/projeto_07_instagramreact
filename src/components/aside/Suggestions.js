@@ -30,7 +30,7 @@ export default function Suggestions(props) {
         img: "./assets/img/nick quase s.jpg", 
         link: "https://www.instagram.com/", 
         reason: "Seguido(a) por Murta e mais 21 pessoas"}
-    ]
+    ];
     //UI
     return (
         <div className="corpo-menu-lateral">

@@ -6,7 +6,7 @@ export default function NavibarDesktop() {
                 <ion-icon name="logo-instagram"></ion-icon>
                 </a>
                 <div className="borda-menu-superior"></div>
-                <a href="https://www.instagram.com"><img src="/projeto2-instagram/imagens/logo.png" title="Instagrão" alt="Logo" /></a>
+                <a href="https://www.instagram.com"><img src="./assets/img/logo.png" title="Instagrão" alt="Logo" /></a>
             </div>
             <div className="buscador">
                 <ion-icon name="search-outline"></ion-icon>
