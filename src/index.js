@@ -7,7 +7,7 @@ import Mobilebar from './components/Mobilebar';
 //UI
 function App() {
     return (
-        <div>
+        <div className="Giggs-e-Mary">
             <Navibar />
             <Container />
             <Mobilebar />

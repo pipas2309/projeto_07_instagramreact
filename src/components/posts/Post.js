@@ -8,7 +8,7 @@ export default function Post(props) {
 
     let temE = (" e ");
     let comentario = <div className="post-comentarios"></div>;
-    //Logica dos comentários - meio gambiarra
+    //Logica dos comentários - meio gambiarra - Sei que o certo é no props
     if(username === "Minerva") {
         comentario = 
             (<div class="post-comentarios">

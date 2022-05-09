@@ -4,7 +4,7 @@
     font-weight: 400;
 }
 
-body {
+.root {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -730,7 +730,7 @@ background-color: #ffffff;
 
     .post-comentarios {
         flex-direction: column;
-        width: auto;
+        width: 100%;
         margin-left: 16px;
         margin-right: 16px;
     }
@@ -763,15 +763,15 @@ background-color: #ffffff;
     }
 
     .post-baixo {
-        max-width: 100%;
+        width: 100%;
     }
 
     .post-imagem {
-        max-width: 100%;
+        width: 100%;
     }
 
     .post-topo {
-        max-width: 100%;
+        width: 100%;
     }
 
     .postagens {
