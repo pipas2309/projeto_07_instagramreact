@@ -1,3 +1,6 @@
+//IMPORTS
+import React from 'react';
+
 //EXPORTS
 export default function Post(props) {
     //Estilo do props
@@ -24,7 +27,6 @@ export default function Post(props) {
                 </div>                            
             </div>);
         temE = (" e ");
-        jahFoi++;
     };
     if(username === "Dolores_Umbrigde") {
         temE = ("");
@@ -41,7 +43,6 @@ export default function Post(props) {
                     </div>
                 </div>                            
             </div>);
-        jahFoi++;
     }
     if(username === "Ronn1e") {
         temE = (" e ");
@@ -71,7 +72,6 @@ export default function Post(props) {
                     </div>
                 </div>                            
             </div>)
-        jahFoi++;
     }
     if(username === "Lucius_Malfoy") {
         temE = " e ";
@@ -108,7 +108,6 @@ export default function Post(props) {
                     </div>
                 </div>
             </div>)
-        jahFoi++;
     }
     if(username === "Luna") {
         temE = (" e ");
@@ -148,7 +147,6 @@ export default function Post(props) {
                     </div>
                 </div>
             </div>)
-        jahFoi++;
     }
     if(username === "HarryOficial") {
         temE = (" e ");
@@ -188,7 +186,6 @@ export default function Post(props) {
                     </div>
                 </div>
             </div>)
-        jahFoi++;
     }
     if(username === "DracoM") {
         temE = (" e ");
@@ -215,8 +212,32 @@ export default function Post(props) {
                     </div>
                 </div>
             </div>)
-        jahFoi++;
     }
+
+    //Logica do Like-Coração
+
+    //Criando 2 tipos de hooks 1 para a DIV saber quando está ou não curtida e
+    //outra para alterar o nome do coração, que muda o estilo no ionicon.
+    const [typeIonIcon, setTypeIonIcon] = React.useState("heart-outline");
+    const [heartState, setHeartState] = React.useState("vazio");
+
+    //Função de mão única quando clica na imagem
+    function clicaNaImagem() {
+        setTypeIonIcon("heart");
+        setHeartState("curtido");
+    }
+
+    //Função que alterna, quando clica no coração
+    function clicaNoCoracao(event) {
+        if (event.currentTarget.classList.contains("curtido")) {
+            setTypeIonIcon("heart-outline");
+            setHeartState("vazio");
+        } else {
+            setTypeIonIcon("heart");
+            setHeartState("curtido");
+        }
+    }
+
 
     //UI
     return (
@@ -238,15 +259,13 @@ export default function Post(props) {
                     </a>
                 </div>
             </div>
-            <div class="post-imagem">
+            <div class="post-imagem" onClick={clicaNaImagem}>
                 <img src={imgPost} alt={"Imagem de: " + name} />
             </div>
             <div class="post-baixo">
                 <div class="post-barra-interacao">
-                    <div class="ion-interacao">
-                        <a href="https://www.instagram.com/">
-                            <ion-icon name="heart-outline"></ion-icon>
-                        </a>                            
+                    <div class="ion-interacao" onClick={clicaNoCoracao} className={heartState}>                        
+                            <ion-icon name={typeIonIcon} class={"md hydrated " + heartState}></ion-icon>             
                     </div>
                     <div class="ion-interacao">
                         <a href="https://www.instagram.com/">

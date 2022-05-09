@@ -1,7 +1,35 @@
+//IMPORTS
+import React from "react";
+
 //EXPORTS
 export default function Post(props) {
     //Estilo do props
     const {name, username, subname, link, imgUsuario, imgPost, video, likedName, likedImg, likedNumber, time} = props.postDetail;
+
+    //Logica do Like-Coração
+
+    //Criando 2 tipos de hooks 1 para a DIV saber quando está ou não curtida e
+    //outra para alterar o nome do coração, que muda o estilo no ionicon.
+    const [typeIonIcon, setTypeIonIcon] = React.useState("heart-outline");
+    const [heartState, setHeartState] = React.useState("vazio");
+
+    //Função de mão única quando clica na imagem
+    function clicaNaImagem() {
+        setTypeIonIcon("heart");
+        setHeartState("curtido");
+    }
+
+    //Função que alterna, quando clica no coração
+    function clicaNoCoracao(event) {
+        if (event.currentTarget.classList.contains("curtido")) {
+            setTypeIonIcon("heart-outline");
+            setHeartState("vazio");
+        } else {
+            setTypeIonIcon("heart");
+            setHeartState("curtido");
+        }
+    }
+
 
     //UI
     return (
@@ -24,17 +52,15 @@ export default function Post(props) {
                 </div>
             </div>
             <div class="post-imagem">
-                <video controls muted autoplay>
+                <video controls muted autoplay onClick={clicaNaImagem}>
                     <source src={video + "mp4"} type="video/mp4" />
                     <source src={video + "ogv"} type="video/ogg" />
                 </video>
             </div>
             <div class="post-baixo">
                 <div class="post-barra-interacao">
-                    <div class="ion-interacao">
-                        <a href="https://www.instagram.com/">
-                            <ion-icon name="heart-outline"></ion-icon>
-                        </a>                            
+                    <div class="ion-interacao" onClick={clicaNoCoracao} className={heartState}>                    
+                            <ion-icon name={typeIonIcon} class={"md hydrated " + heartState}></ion-icon>                           
                     </div>
                     <div class="ion-interacao">
                         <a href="https://www.instagram.com/">
